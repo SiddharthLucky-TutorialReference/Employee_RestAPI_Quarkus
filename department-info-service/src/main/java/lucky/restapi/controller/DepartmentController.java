@@ -3,7 +3,6 @@ package lucky.restapi.controller;
 
 import lucky.restapi.model.Departments;
 import lucky.restapi.repository.DepartmentInterface;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,4 +25,6 @@ public class DepartmentController
         List<Departments> allDepartments = (List<Departments>) departmentInterface.findAll();
         return allDepartments;
     }
+
+
 }

@@ -1,7 +1,8 @@
 package lucky.restapi.model;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
+
 
 @Entity
 @Table(name = "employees", schema = "employees")
