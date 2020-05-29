@@ -13,13 +13,14 @@ public class Employees
     private Date birth_date;
     private String first_name;
     private String last_name;
-    private String gender;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
     private Date hire_date;
 
     public Employees() {
     }
 
-    public Employees(int emp_no, Date birth_date, String first_name, String last_name, String gender, Date hire_date)
+    public Employees(int emp_no, Date birth_date, String first_name, String last_name, Gender gender, Date hire_date)
     {
         this.emp_no = emp_no;
         this.birth_date = birth_date;
@@ -69,11 +70,11 @@ public class Employees
         this.hire_date = hire_date;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 }
