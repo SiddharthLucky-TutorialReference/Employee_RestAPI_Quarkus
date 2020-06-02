@@ -7,9 +7,10 @@ import javax.persistence.*;
 public class Departments
 {
     @Id
-    @GeneratedValue
+    @Column(name = "dept_no", nullable = false, columnDefinition = "VARCHAR(4)")
     private String dept_No;
 
+    @Column(name = "dept_name", unique = true, columnDefinition = "VARCHAR(40)")
     private String dept_Name;
 
     public Departments() {

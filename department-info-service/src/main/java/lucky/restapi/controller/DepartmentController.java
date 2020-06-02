@@ -3,25 +3,22 @@ package lucky.restapi.controller;
 
 import lucky.restapi.model.Departments;
 import lucky.restapi.repository.DepartmentInterface;
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.inject.Inject;
 import java.util.List;
 
-@Controller
 @RestController
 @RequestMapping("/departments")
 public class DepartmentController
 {
-    @Inject
+    @Autowired
     DepartmentInterface departmentInterface;
 
     @RequestMapping("/all")
     public List<Departments> getAllDepartments()
     {
-        List<Departments> allDepartments = (List<Departments>) departmentInterface.findAll();
-        return allDepartments;
+        return departmentInterface.findAll();
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/add-departments")
@@ -32,4 +29,10 @@ public class DepartmentController
     }
 
 
+    @DeleteMapping(value ="/remove/{dept_id}")
+    public String removeDepartmentId(@PathVariable("dept_id") String dept_Id)
+    {
+        departmentInterface.deleteById(dept_Id);
+        return "The value is deleted successfully";
+    }
 }
