@@ -29,7 +29,7 @@ public class DepartmentController
     }
 
 
-    @DeleteMapping(value ="/remove/{dept_id}")
+    @DeleteMapping(value ="/remove-department/{dept_id}")
     public String removeDepartmentId(@PathVariable("dept_id") String dept_Id)
     {
         departmentInterface.deleteById(dept_Id);
