@@ -15,13 +15,13 @@ public class DepartmentController
     @Autowired
     DepartmentInterface departmentInterface;
 
-    @RequestMapping("/all")
+    @GetMapping("/all")
     public List<Departments> getAllDepartments()
     {
         return departmentInterface.findAll();
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/add-departments")
+    @PostMapping(value = "/add-departments")
     public String addIntoDepartments(@RequestBody Departments department)
     {
         departmentInterface.save(department);
